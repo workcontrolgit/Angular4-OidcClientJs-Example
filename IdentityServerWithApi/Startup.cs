@@ -26,7 +26,7 @@ namespace IdentityServer4InMem
             services.AddAuthentication()
                 .AddIdentityServerAuthentication("api", options =>
                 {
-                    options.Authority = "http://localhost:5555";
+                    options.Authority = "https://localhost:44312";
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "api1";
                 });
@@ -83,9 +83,9 @@ namespace IdentityServer4InMem
                 RequirePkce = true,
                 RequireClientSecret = false,
                 AllowedScopes = new List<string> {"openid", "profile", "api1"},
-                RedirectUris = new List<string> {"http://localhost:4200/auth-callback", "http://localhost:4200/silent-refresh.html"},
-                PostLogoutRedirectUris = new List<string> {"http://localhost:4200/"},
-                AllowedCorsOrigins = new List<string> {"http://localhost:4200"},
+                RedirectUris = new List<string> {"https://localhost:4200/auth-callback", "https://localhost:4200/silent-refresh.html"},
+                PostLogoutRedirectUris = new List<string> {"https://localhost:4200/"},
+                AllowedCorsOrigins = new List<string> {"https://localhost:4200"},
                 AllowAccessTokensViaBrowser = true
             }
         };
