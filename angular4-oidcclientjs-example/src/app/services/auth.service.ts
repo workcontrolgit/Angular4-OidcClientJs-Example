@@ -41,12 +41,12 @@ export class AuthService {
 
 export function getClientSettings(): UserManagerSettings {
   return {
-    authority: 'https://localhost:44312/',
+    authority: 'https://localhost:44354/',
     client_id: 'angular_spa',
     redirect_uri: 'https://localhost:4200/auth-callback',
     post_logout_redirect_uri: 'https://localhost:4200/',
     response_type: "code",
-    scope: "openid profile api1",
+    scope: "openid profile app.api.employeeprofile.read",
     filterProtocolClaims: true,
     loadUserInfo: true
   };
