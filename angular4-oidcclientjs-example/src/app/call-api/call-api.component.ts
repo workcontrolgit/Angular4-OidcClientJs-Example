@@ -10,15 +10,17 @@ import { AuthService } from '../services/auth.service';
 })
 export class CallApiComponent implements OnInit {
 
-  response: Object;
+  response: any;
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   ngOnInit() {
     let headers = new HttpHeaders({ 'Authorization': this.authService.getAuthorizationHeaderValue() });
 
     this.http.get<any>("https://localhost:44321/api/v1/Persons", { headers: headers })
-      .subscribe(response => this.response = response);
-      console.log(JSON.stringify(this.response));
+      .subscribe((data: any) => {
+        this.response = JSON.stringify(data);
+        console.log(this.response);
+      })
   }
 
 }
